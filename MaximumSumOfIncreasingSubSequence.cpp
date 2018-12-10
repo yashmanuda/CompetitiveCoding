@@ -5,28 +5,27 @@ int maxOf(int a, int b){
     return (a>b?a:b);
 }
 
+// look and understand LIS first, it's similar to that
+// how much can j = 0 to i-1 can contribute to i, choose max of it
 void findMaximumSum(int arrayNum[], int sizeOfArray){
-    int seqStart = sizeOfArray - 1;
-    int sumArr[sizeOfArray];
-    sumArr[sizeOfArray - 1] = arrayNum[sizeOfArray - 1];
-    int currSmallest = arrayNum[sizeOfArray - 1];
-    for(int i = sizeOfArray - 2; i >=0 ; i--){
-        // if element is larger than the current sum
-        if(arrayNum[i] > sumArr[i + 1]){
-            sumArr[i] = arrayNum[i];
-            currSmallest = arrayNum[i];
-        }
-        //add if smaller element
-        else if (arrayNum[i] < currSmallest){
-            sumArr[i] = sumArr[i + 1] + arrayNum[i];
-            currSmallest = arrayNum[i];
-        }
-        else{
-            sumArr[i] = sumArr[i + 1];
-        }
+    int sumArray[sizeOfArray];
+    for(int c = 0; c < sizeOfArray; c++){
+        sumArray[c] = arrayNum[c];
     }
-    cout<<sumArr[0]<<endl;
-    return;
+    int currentMaxSum = sumArray[0];
+    int overallMaxSum = sumArray[0];
+    for(int i = 1; i < sizeOfArray; i++){
+        currentMaxSum = sumArray[i];
+        for(int j = 0; j < i; j++){
+            if(arrayNum[i] > arrayNum[j]){
+                currentMaxSum = maxOf(sumArray[i] + sumArray[j],currentMaxSum);
+            }
+        }
+        sumArray[i] = currentMaxSum;
+        overallMaxSum = maxOf(overallMaxSum,currentMaxSum);
+    }
+
+    cout << overallMaxSum << endl;
 }
 
 int main(){
