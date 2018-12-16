@@ -8,7 +8,7 @@ Important things to remember:
 
 Map - key, value pairs, with unique keys, sorted keys, Red-Black trees x (unordered_map, non sorted, hash-table)
 
-MultiMap - key value pairs, with keys, not necessarily unique, sorted keys x Red-Black trees(unordered_multimap, non sorted, hash-table)
+MultiMap - key value pairs, with keys, not necessarily unique, sorted keys, Red-Black trees x (unordered_multimap, non sorted, hash-table)
 
 deque - double ended queue (back, front, push_back, push_front, pop_back, pop_front)
 
