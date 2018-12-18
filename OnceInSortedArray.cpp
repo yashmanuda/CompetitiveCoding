@@ -16,14 +16,6 @@ void getOnceInArray(int arrayNum[], int sizeOfArray){
             cout << arrayNum[mid] << endl;
             return;
         }
-        else if(mid == 0 && arrayNum[mid + 1] != arrayNum[mid]){
-            cout << arrayNum[mid] << endl;
-            return;
-        }
-        else if(mid == sizeOfArray - 1 && arrayNum[mid - 1] != arrayNum[mid]){
-            cout << arrayNum[mid] << endl;
-            return;
-        }
         else if(arrayNum[mid - 1] != arrayNum[mid] && arrayNum[mid + 1] != arrayNum[mid]){
             cout << arrayNum[mid] << endl;
             return;
