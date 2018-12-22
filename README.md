@@ -35,4 +35,6 @@ deque - double ended queue (back, front, push_back, push_front, pop_back, pop_fr
 (iii) Hash-table used to store elements.
 (iv) We can erase only the element for which iterator position is given.
 
-Insertion in a map is not possible if the key is already present in the map, so don't use insert if you want to update the value of an existing key. Use map[key] = value, to update the value. 
+Insertion in a map is not possible if the key is already present in the map, so don't use insert if you want to update the value of an existing key. Use map[key] = value, to update the value.
+
+Order of insertion is not maintained in unordered_map, hence the name 'unordered'.
